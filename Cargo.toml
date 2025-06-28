@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/SwasthyaAccess_backend"
+]
+resolver = "2"
