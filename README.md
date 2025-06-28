@@ -1,2 +1,2 @@
-# SwasthyaAcess
+# SwasthyaAdcess
 Patient's digital health record vault over ICP
