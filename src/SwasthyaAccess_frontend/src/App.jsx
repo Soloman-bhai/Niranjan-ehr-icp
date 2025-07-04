@@ -1,31 +1,27 @@
-import { useState } from 'react';
-import { SwasthyaAccess_backend } from 'declarations/SwasthyaAccess_backend';
+import { useEffect, useState } from "react";
+import { SwasthyaAccess_backend } from "declarations/SwasthyaAccess_backend";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Nav from "./components/Nav/Nav";
+import Footer from "./components/Footer/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-function App() {
-  const [greeting, setGreeting] = useState('');
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    SwasthyaAccess_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
+export default function App() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
   return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
+    <BrowserRouter>
+      <div className="flex flex-col min-h-screen">
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* future pages go here */}
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
-
-export default App;
