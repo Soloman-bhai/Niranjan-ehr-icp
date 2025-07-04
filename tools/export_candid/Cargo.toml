@@ -1,8 +1,0 @@
-[package]
-name = "export_candid"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-SwasthyaAccess_backend = { path = "../../src/SwasthyaAccess_backend" }
-candid = "0.10.13"
