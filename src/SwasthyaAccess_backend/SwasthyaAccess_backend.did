@@ -1,3 +1,19 @@
+type PatientRecord = record {
+    id : nat32;
+    name : text;
+    age : nat8;
+    medical_history : text;
+    created_at : nat64;
+    created_by : opt principal;
+    last_updated : opt nat64;
+    updated_by : opt principal;
+};
+
 service : {
-    "greet": (text) -> (text) query;
-}
+    "create_patient_record" : (PatientRecord) -> (variant { Ok; Err : text });
+    "get_patient_record" : (nat32) -> (opt PatientRecord) query;
+    "update_patient_record" : (nat32, PatientRecord) -> (variant { Ok; Err : text });
+    "delete_patient_record" : (nat32) -> (variant { Ok; Err : text });
+    "list_patient_records" : (opt nat32, opt nat32) -> (vec PatientRecord) query;
+    "search_patients" : (text) -> (vec PatientRecord) query;
+}; 

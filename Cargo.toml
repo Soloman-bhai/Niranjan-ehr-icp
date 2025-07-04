@@ -1,5 +1,6 @@
 [workspace]
 members = [
-    "src/SwasthyaAccess_backend"
+    "src/SwasthyaAccess_backend",
+    "tools/export_candid"
 ]
 resolver = "2"

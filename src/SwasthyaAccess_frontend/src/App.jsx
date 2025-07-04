@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SwasthyaAccess_backend } from "declarations/SwasthyaAccess_backend";
+ //import { SwasthyaAccess_backend } from "../../declarations/SwasthyaAccess_backend/SwasthyaAccess_backend.did";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Nav from "./components/Nav/Nav";
